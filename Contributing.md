@@ -4,6 +4,12 @@ Thank you for helping out and remember, **no contribution is too small**. <br>
 <br>
 - Add only the problems which have been a part of Contests by grouping them into a folder.
 - Name the folder in a valid manner. **Ex : Biweekly 50 and add problems in that folder.**
+
+✔ **MAIN README**
+- Write the Contest name in the first column.
+- Add the link to the ntest problems n second column.
+
+✔ **FOLDER README**
 - Inside the folder, edit readme by having links to the problem asked.
 - If any problem is Important in perspective of an interview, mark it as 💡
 
