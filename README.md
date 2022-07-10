@@ -1,2 +1,3 @@
 # LeetCode-Contests
-This Repo contains the solution for all Contests (Weekly &amp; Biweekly) taken place till date.
+
+🥇  [Contributing Guidelines](https://github.com/nishkarsh800/LeetCode-Contests/blob/main/Contributing.md) 🥇
