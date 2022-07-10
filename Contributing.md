@@ -7,7 +7,7 @@ Thank you for helping out and remember, **no contribution is too small**. <br>
 
 ✔ **MAIN README**
 - Write the Contest name in the first column.
-- Add the link to the ntest problems n second column.
+- Add the link to the folder containing contest problems in the second column.
 
 ✔ **FOLDER README**
 - Inside the folder, edit readme by having links to the problem asked.
