@@ -2,7 +2,7 @@
 We are happy to welcome all the contributions from anyone willing to improve this project. <br>
 Thank you for helping out and remember, **no contribution is too small**. <br>
 <br>
-- Add only the problems which have been a part of Contests by grouping them into a folder.
+- Add only the problems which have been a part of Contests **by grouping them into a folder**.
 - Name the folder in a valid manner. **Ex : Biweekly 50 and add problems in that folder.**
 
 ✔ **MAIN README**
