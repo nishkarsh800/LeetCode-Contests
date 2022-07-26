@@ -27,6 +27,8 @@
 |-------|-----|
 
 </div>
+<br>
+<br>
 
 <h2 align="center"> Project Contributors </h2> 
 
