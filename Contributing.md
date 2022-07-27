@@ -4,9 +4,9 @@ Thank you for helping out and remember, **no contribution is too small**. <br>
 <br>
 - Add only the problems which have been a part of Contests **by grouping them into a folder**.
 - Name the folder in a valid manner. **Ex : Biweekly 50 and add problems in that folder.**
-- Code should be written in **C++** 
-- Use curly braces from the **next line**
-- Explain the code with proper **approach** along with its **Time and Space complexity**
+- Code should be written in **C++**. 
+- Use curly braces from the **next line**.
+- Explain the code with proper **approach** along with its **Time and Space complexity**.
 
 ✔ **MAIN README**
 - Write the Contest name in the first column.
