@@ -26,6 +26,7 @@
 
 |CONTESTS|LINK|
 |-------|-----|
+|Weekly Contest 298|[Folder Link](https://github.com/Avik-creator/LeetCode-Contests/tree/Contest-298/Weekly%20Contest%20298)|
 
 </div>
 <br>
