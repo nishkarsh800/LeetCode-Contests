@@ -12,6 +12,7 @@
 
 |CONTESTS|LINK|
 |-------|-----|
+| [Biweekly 83](https://leetcode.com/contest/biweekly-contest-83/) | [Solutions](https://github.com/Shweta2024/LeetCode-Contests/tree/biweekly83/Biweekly%20Contest%2083) |
 
 </div>
 
