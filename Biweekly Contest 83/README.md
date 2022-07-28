@@ -1,5 +1,5 @@
 
-## Best Poker Hand
+## [Best Poker Hand](https://leetcode.com/problems/best-poker-hand/)
 
 #### Approach
 
@@ -36,7 +36,7 @@
 
 
 
-## Shortest Impossible Sequence of Rolls
+## [Shortest Impossible Sequence of Rolls](https://leetcode.com/problems/shortest-impossible-sequence-of-rolls/)
 
 #### Approach
 
@@ -55,7 +55,7 @@
 #### Space Complexity = O(k)
 
 
-## Design a Number Container System
+## [Design a Number Container System](https://leetcode.com/problems/design-a-number-container-system/)
 
 #### Approach
 
@@ -74,3 +74,17 @@
 #### Time Complexity = O(N)
 
 #### Space Complexity = O(2N)
+
+## [Number of Zero-Filled Subarrays](https://leetcode.com/problems/number-of-zero-filled-subarrays/)
+
+If we are having 1 zero then we'll add 1 to answer (because :- [0])
+
+If we are having 2 zeros then we'll add 2 to answer ([0],[0,0])
+
+If we are having 3 zeros then we'll add 3 to answer (because :- [0],[0,0],[0,0,0])
+
+and will do the same
+
+#### Time Complexity = O(N)
+
+#### Space Complexity = O(1)
