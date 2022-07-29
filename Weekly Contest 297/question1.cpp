@@ -52,14 +52,17 @@ The upper bound of the last tax bracket is greater than or equal to income.
 
 class Solution {
 public:
-    double calculateTax(vector<vector<int>>& brackets, int income) {
-        double tax = 0;
-        int previous = 0;
-        for (const auto& bracket: brackets) {            
-            tax += (min(bracket[0], income) - previous) * 0.01 * bracket[1];
-            if (income < bracket[0]) break;
-            previous = bracket[0];
-        }
-        return tax;
-    }
+	double calculateTax(vector<vector<int>>& bra, int in) {
+		double tax=0;
+		int temp=0;
+		for(int i=0;i<bra.size();i++){
+			if(in>=bra[i][0]) tax+=(bra[i][0]-temp)*((1.0*bra[i][1])/100);
+			else{
+				tax+=(in-temp)*((1.0*bra[i][1])/100);
+				break;
+			}
+			temp=bra[i][0];
+		}
+		return tax;
+	}
 };
