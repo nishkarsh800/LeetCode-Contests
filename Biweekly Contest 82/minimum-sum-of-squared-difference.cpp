@@ -29,44 +29,66 @@ The minimum of the sum of square difference will be:
 Note that, there are other ways to obtain the minimum of the sum of square difference, but there is no way to obtain a sum smaller than 43.
 
 Approach:
-Binary Search
+First find the difference between two arrays. Then use binary search to find the maximum possible difference value so that we could reduce all larger differences and make k ≥ 0. Then we simulate the reduction of the maximum difference and k, and use priority queue to remove all extra k from the array for optimal answer.
 */
 
-class Solution {
+class Solution 
+{
 public:
-    long long minSumSquareDiff(vector<int>& nums1, vector<int>& nums2, int k1, int k2) {
-        vector<int64_t> diffs(size(nums1));
-        for (int i = 0; i < size(diffs); ++i) {
-            diffs[i] = abs(nums1[i] - nums2[i]);
-        }
-        sort(rbegin(diffs), rend(diffs));
-        int64_t k = min(static_cast<int64_t>(k1) + k2, accumulate(cbegin(diffs), cend(diffs), static_cast<int64_t>(0)));
-        const auto& check = [&](int x) {
-            return accumulate(cbegin(diffs), cend(diffs), 0ll,
-                              [&](const auto& total, const auto& d) {
-                                  return total + max(d - x, static_cast<int64_t>(0));
-                              }) <= k;
-        };
-        int64_t left = 0, right = diffs[0];
-        while (left <= right) {
-            const int mid = left + (right - left) / 2;
-            if (check(mid)) {
-                right = mid - 1;
-            } else {
-                left = mid + 1;
+    bool val(vector<int> &v, int mark, long long k) 
+    {
+        long long cnt = 0;
+        for (auto a : v) {
+            if (a > mark) {
+                cnt += a - mark;
             }
         }
-        k -= accumulate(cbegin(diffs), cend(diffs), 0ll,
-                        [&](const auto& total, const auto& d) {
-                            return total + max(d - left, static_cast<int64_t>(0));
-                        });
-        for (int i = 0; i < size(diffs); ++i) {
-            diffs[i] = min(diffs[i], left) - int(i < k);
+        return cnt <= k;
+    }
+    long long minSumSquareDiff(vector<int>& nums1, vector<int>& nums2, int k1, int k2) 
+    {
+        vector<int> diff(nums1.size());
+        for (int i = 0; i < nums1.size(); ++i) 
+        {
+            diff[i] = abs(nums1[i] - nums2[i]);
         }
-        return accumulate(cbegin(diffs), cend(diffs), 0ll,
-                          [](const auto& total, const auto& d) {
-                              return total + d * d;
-                          });
+        long long left = 0, right = *max_element(diff.begin(), diff.end()), ans = 0, k = k1 + k2;
+        while (left <= right) 
+        {
+            long long mid = left + (right - left) / 2;
+            if (val(diff, mid, k)) 
+            {
+                ans = mid;
+                right = mid - 1;
+            } else left = mid + 1;
+        }
+        long long sum = 0;
+        for (int i = 0; i < nums1.size(); ++i) 
+        {
+            if (diff[i] > ans && k > 0) 
+            {
+                int dif = diff[i] - ans;
+                k -= dif;
+                diff[i] -= dif;
+            }
+        }
+        priority_queue<int> pq;
+        for (auto a : diff) pq.push(a);
+        while (k > 0 && pq.top() > 0) 
+        {
+            int tmp = pq.top();
+            pq.pop();
+            --tmp;
+            --k;
+            pq.push(tmp);
+        }
+        if (pq.top() == 0) return 0;
+        while (!pq.empty() && pq.top() > 0) 
+        {
+            sum += 1LL * pq.top() * pq.top();
+            pq.pop();
+        }
+        return sum;       
     }
 };
 
