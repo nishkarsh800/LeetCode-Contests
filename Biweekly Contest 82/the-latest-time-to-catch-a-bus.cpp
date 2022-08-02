@@ -32,38 +32,44 @@ At time 30, the third bus departs with the 0th passenger and you.
 Notice if you had arrived any later, then the 6th passenger would have taken your seat on the third bus.
 
 Approach:
-Sorting using two pointers
+First sort the bus departure time and passenger arrival time. Then go through each bus departure time and add passengers greedily. If the passenger fits in the capacity, then add its previous position if it’s available. If all passengers within the bus’s time range are added and there are still seats available, then add the latest position after the last passenger.
 */
 
-class Solution {
+class Solution 
+{
 public:
-    int latestTimeCatchTheBus(vector<int>& buses, vector<int>& passengers, int capacity) {
-        sort(begin(buses), end(buses));
-        sort(begin(passengers), end(passengers));
-        int cnt = 0, j = 0;
-        for (int i = 0; i < size(buses) - 1; ++i) {
-            while (j < size(passengers) && passengers[j] <= buses[i]) {
-                ++cnt;
-                ++j;
+    int latestTimeCatchTheBus(vector<int>& buses, vector<int>& passengers, int capacity) 
+    {
+        sort(buses.begin(), buses.end());
+        sort(passengers.begin(), passengers.end());
+        int ans = 0, que = 0;
+        set<int> st;
+        for (auto p : passengers) st.insert(p);
+        for (int i = 0; i < buses.size(); ++i) 
+        {
+            int curDepar = buses[i];
+            int curPas = 0;
+            // try to add passengers and add the previous position if it's available
+            while (que < passengers.size() && curPas < capacity && passengers[que] <= curDepar) 
+            {
+                ++que;
+                if (st.find(passengers[que - 1] - 1) == st.end()) {
+                    ans = passengers[que - 1] - 1;
+                }
+                ++curPas;
             }
-            cnt = max(cnt-capacity, 0);
-        }
-        j -= max(cnt - capacity, 0);
-        cnt = min(cnt, capacity);
-        while (j < size(passengers) && passengers[j] <= buses.back() && cnt + 1 <= capacity) {
-            ++cnt;
-            ++j;
-        }
-        if (cnt < capacity && (j - 1 < 0 || passengers[j - 1] != buses.back())) {
-            return buses.back();
-        }
-        --j;
-        for (; j; --j) {
-            if (passengers[j] - 1 != passengers[j - 1]) {
-                break;
+            // find the latest position and compare it with answer
+            if (curPas < capacity) 
+            {
+                while (st.find(curDepar) != st.end()) 
+                {
+                    --curDepar;
+                }
+                ans = max(ans, curDepar);
             }
         }
-        return passengers[j] - 1;
+        return ans;
+        
     }
 };
 
