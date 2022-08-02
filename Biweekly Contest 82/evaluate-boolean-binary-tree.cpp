@@ -27,18 +27,22 @@ Output: false
 Explanation: The root node is a leaf node and it evaluates to false, so we return false.
 
 Approach:
-DFS with recursion.
+DFS with recursion - Use recursion to find the value of the left and right subtree, and calculate the value if it’s not leaf or return the value of the leaf otherwise.
 */
 
-class Solution {
+class Solution 
+{
 public:
-    bool evaluateTree(TreeNode* root) {
-        static unordered_map<int, function<int(int, int)>> OP = {
+    bool evaluateTree(TreeNode* root) 
+    {
+        static unordered_map<int, function<int(int, int)>> OP = 
+        {
             {2, [](int x, int y) { return x | y; }},
             {3, [](int x, int y) { return x & y; }},
         };
 
-        function<int (TreeNode*)> dfs = [&](TreeNode *node) {
+        function<int (TreeNode*)> dfs = [&](TreeNode *node) 
+        {
             if (node->left == node->right) {
                 return node->val;
             }
@@ -48,6 +52,7 @@ public:
         return dfs(root);
     }
 };
+
 
 // Time Complexity:  O(n)
 // Space Complexity: O(h)
