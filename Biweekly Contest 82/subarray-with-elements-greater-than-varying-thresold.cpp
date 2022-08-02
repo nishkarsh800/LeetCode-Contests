@@ -25,7 +25,7 @@ Similarly, the subarrays [6,5,6], [6,5,6,5], [6,5,6,5,8] also satisfy the given 
 Therefore, 2, 3, 4, or 5 may also be returned.
 
 Approach:
-Using Mono Stack method
+We build a monotone stack starting from each element, assume the current element is the smallest element in the subarray, and check if any possible subarray fulfills the threshold requirement.
 */
 
 class Solution {
