@@ -28,6 +28,7 @@
 |CONTESTS|LINK|
 |-------|-----|
 |[Weekly Contest 298](https://leetcode.com/contest/weekly-contest-298/)|[Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Weekly%20Contest%20298)|
+|[Weeky Contest 297](https://leetcode.com/contest/weekly-contest-297/)|[Solutions](https://github.com/Avik-creator/LeetCode-Contests/tree/Contest-297/Weekly%20Contest%20297)|
 </div>
 <br>
 <br>
