@@ -42,22 +42,25 @@ roads[i].length == 2
 ai != bi
 There are no duplicate roads. */
 
-// Approach
+// Approach :-- Greedy Approach
 
-Given an integer n denoting the number of cities in a country.
-The cities are numbered from 0 to n - 1.
-Given a 2D integer array roads where roads[i] = [ai, bi] denotes that there exists a bidirectional road connecting cities ai and bi.
-Assign each city with an integer value from 1 to n.
-Each value can only be used once.
-Return the maximum total importance of all roads possible.
+1. We are given an integer n denoting the number of cities in a country.
+2. The cities are numbered from 0 to n - 1.
+3. Look that given a 2D integer array roads where roads[i] = [ai, bi] denotes that there exists a bidirectional road connecting cities ai and bi.
+4. We should now assign each city with an integer value from 1 to n.
+5. We should note that each value can only be used once.
+6. Now return the maximum total importance of all roads possible.
 
-class Solution {
+class Solution
+{
  public:
-  long long maximumImportance(int n, vector<vector<int>>& roads) {
+  long long maximumImportance(int n, vector<vector<int>>& roads)
+  {
     long long ans = 0;
     vector<long long> count(n);
 
-    for (const auto& r : roads) {
+    for (const auto& r : roads)
+    {
       ++count[r[0]];
       ++count[r[1]];
     }
@@ -73,4 +76,5 @@ class Solution {
 
 // Time Complexity: O(nlogn)
 // Space Complexity: O(n)
+
 
