@@ -43,26 +43,27 @@ Constraints:
 0 <= maxRow <= n - 1
 At most 5 * 104 calls in total will be made to gather and scatter. */
 
-// Approach
+// Approach :-- Recursive Approach
 
-Given a concert hall has n rows numbered from 0 to n - 1.
-Each with m seats, numbered from 0 to m - 1.
-Group of k spectators can sit together in a row.
-Every member of a group of k spectators can get a seat.
-They may or may not sit together.
-Book seats only if each member of their group can get a seat with row number less than or equal to maxRow.
-Choose the row with the smallest number when there are multiple rows to choose from.
-Choose the seat with the smallest number when there are multiple seats to choose in the same row.
+1. Look at the given statements and then approach to the question.
+2. We are given a concert hall which has n rows numbered from 0 to n - 1.
+3. Each with m seats, numbered from 0 to m - 1.
+4. Note that group of k spectators can sit together in a row.
+5. Every member of a group of k spectators can get a seat.
+6. They may or may not sit together.
+7. We should book seats only if each member of their group can get a seat with row number less than or equal to maxRow.
+8. Now choose the row with the smallest number when there are multiple rows to choose from.
+9. And finally choose the seat with the smallest number when there are multiple seats to choose in the same row.
 
-struct SegmentTreeNode {
+struct SegmentTreeNode
+{
   int lo;
   int hi;
   unique_ptr<SegmentTreeNode> left;
   unique_ptr<SegmentTreeNode> right;
   int max;
   long sum;
-  SegmentTreeNode(int lo, int hi, unique_ptr<SegmentTreeNode>&& left,
-                  unique_ptr<SegmentTreeNode>&& right, int max, long sum)
+  SegmentTreeNode(int lo, int hi, unique_ptr<SegmentTreeNode>&& left, unique_ptr<SegmentTreeNode>&& right, int max, long sum)
       : lo(lo),
         hi(hi),
         left(move(left)),
@@ -71,20 +72,24 @@ struct SegmentTreeNode {
         sum(sum) {}
 };
 
-class SegmentTree {
+class SegmentTree
+{
  public:
   SegmentTree(int n, int m) : m(m), root(move(build(0, n - 1))) {}
 
-  vector<int> maxRange(int k, int maxRow) {
+  vector<int> maxRange(int k, int maxRow)
+  {
     return maxRange(root, k, maxRow);
   }
 
-  long sumRange(int maxRow) {
+  long sumRange(int maxRow)
+  {
     return sumRange(root, 0, maxRow);
   }
 
   // minus k max and sum from seats row
-  void minus(int row, int k) {
+  void minus(int row, int k)
+  {
     minus(root, row, k);
   }
 
@@ -92,7 +97,8 @@ class SegmentTree {
   const int m;
   unique_ptr<SegmentTreeNode> root;
 
-  unique_ptr<SegmentTreeNode> build(int l, int r) {
+  unique_ptr<SegmentTreeNode> build(int l, int r)
+  {
     if (l == r)
       return make_unique<SegmentTreeNode>(l, r, nullptr, nullptr, m, m);
     const int mid = (l + r) / 2;
@@ -103,8 +109,10 @@ class SegmentTree {
                                         left->sum + right->sum);
   }
 
-  vector<int> maxRange(unique_ptr<SegmentTreeNode>& root, int k, int maxRow) {
-    if (root->lo == root->hi) {
+  vector<int> maxRange(unique_ptr<SegmentTreeNode>& root, int k, int maxRow)
+  {
+    if (root->lo == root->hi)
+    {
       if (root->sum < k || root->lo > maxRow)
         return {};
       return {root->lo, m - static_cast<int>(root->sum)};  // {row, col}
@@ -115,7 +123,8 @@ class SegmentTree {
     return maxRange(root->right, k, maxRow);
   }
 
-  long sumRange(unique_ptr<SegmentTreeNode>& root, int i, int j) {
+  long sumRange(unique_ptr<SegmentTreeNode>& root, int i, int j)
+  {
     if (root->lo == i && root->hi == j)
       return root->sum;
     const int mid = (root->lo + root->hi) / 2;
@@ -126,10 +135,12 @@ class SegmentTree {
     return sumRange(root->left, i, mid) + sumRange(root->right, mid + 1, j);
   }
 
-  void minus(unique_ptr<SegmentTreeNode>& root, int row, int k) {
+  void minus(unique_ptr<SegmentTreeNode>& root, int row, int k)
+  {
     if (!root)
       return;
-    if (root->lo == root->hi && root->hi == row) {
+    if (root->lo == root->hi && root->hi == row)
+    {
       root->max -= k;
       root->sum -= k;
       return;
@@ -144,13 +155,16 @@ class SegmentTree {
   }
 };
 
-class BookMyShow {
+class BookMyShow
+{
  public:
   BookMyShow(int n, int m) : tree(n, m), seats(n, m) {}
 
-  vector<int> gather(int k, int maxRow) {
+  vector<int> gather(int k, int maxRow)
+  {
     const auto res = tree.maxRange(k, maxRow);
-    if (res.size() == 2) {
+    if (res.size() == 2)
+    {
       const int row = res[0];
       tree.minus(row, k);
       seats[row] -= k;
@@ -158,16 +172,19 @@ class BookMyShow {
     return res;
   }
 
-  bool scatter(int k, int maxRow) {
+  bool scatter(int k, int maxRow)
+  {
     if (tree.sumRange(maxRow) < k)
       return false;
 
     while (k > 0)
-      if (seats[minVacantRow] >= k) {
+      if (seats[minVacantRow] >= k)
+      {
         tree.minus(minVacantRow, k);
         seats[minVacantRow] -= k;
         k = 0;
-      } else {
+      } else
+      {
         tree.minus(minVacantRow, seats[minVacantRow]);
         k -= seats[minVacantRow];
         seats[minVacantRow] = 0;
@@ -185,4 +202,5 @@ class BookMyShow {
 
 // Time Complexity: Constructor: O(n), O(logn)
 // Space Complexity: O(n)
+
 
