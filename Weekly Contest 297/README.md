@@ -34,7 +34,9 @@
   
   Approach:
   
-  * Go through the Code given in the solution, there is the detailed approach given.
+  * Divide the given array into k subsequences
+  * Then find a subsequence which has largest sum out of all those subsequences. 
+  * Out of all possible subsequences, find the min largest sum possible.
 
 **For Question 4:**
 
