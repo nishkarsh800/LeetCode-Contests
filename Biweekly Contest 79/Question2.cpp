@@ -40,31 +40,37 @@ All the words in messages[i] are separated by a single space.
 messages[i] does not have leading or trailing spaces.
 senders[i] consists of uppercase and lowercase English letters only. */
 
-// Approach
+// Approach :-- DFS Greedy Approach
 
-A chat log of n messages is given.
-Given two string arrays messages and senders where messages[i] is a message sent by senders[i].
-Return the sender with the largest word count.
-If there is more than one sender with the largest word count, return the one with the lexicographically largest name.
+1. Look up at the given statements and approach to the question.
+2. We can see that a chat log of n messages is given.
+3. Given two string arrays messages and senders where messages[i] is a message sent by senders[i].
+4. Then return the sender with the largest word count.
+5. If there is more than one sender with the largest word count, return the one with the lexicographically largest name.
 
-class Solution {
+class Solution
+{
  public:
-  string largestWordCount(vector<string>& messages, vector<string>& senders) {
+  string largestWordCount(vector<string>& messages, vector<string>& senders)
+  {
     const int n = messages.size();
     string ans;
     int maxWordsSent = 0;
     unordered_map<string, int> count;  // {sender, # words sent}
 
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i)
+    {
       const auto& message = messages[i];
       const auto& sender = senders[i];
       const int wordsCount = std::count(begin(message), end(message), ' ') + 1;
       count[sender] += wordsCount;
       const int numWordsSent = count[sender];
-      if (numWordsSent > maxWordsSent) {
+      if (numWordsSent > maxWordsSent)
+      {
         ans = sender;
         maxWordsSent = numWordsSent;
-      } else if (numWordsSent == maxWordsSent && sender > ans) {
+      } else if (numWordsSent == maxWordsSent && sender > ans)
+      {
         ans = sender;
       }
     }
@@ -75,3 +81,5 @@ class Solution {
 
 // Time Complexity: O(n)
 // Space Complexity: O(n)
+
+
