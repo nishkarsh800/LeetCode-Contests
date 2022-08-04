@@ -39,51 +39,38 @@ Constraints:
 
 // Here is solutions:
 
-class Solution 
-{
-int ans=Integer.MAX_VALUE;
-public int distributeCookies(int[] cookies, int k) 
-{
-int[] res=new int[k];
-
-    backTracking(cookies,k,res,0);
+class Solution {
+public:
     
-    return ans;
-}
-
-public void backTracking(int[] cookies,int k,int[] res,int idx)
-{
-    if(idx==cookies.length)
-    {
-        int max=0;
-        // Now we will go through in each child and look into it which child got maximum
-        for(int i=0;i<k;i++)
-        {
-            max=Math.max(max,res[i]);
+    int unfairness = INT_MAX;
+        
+    void helper(int ind, int k, vector<int> &buckets, vector<int> &cookies){
+        // Out of bounds
+        if(ind >= cookies.size()){
+            // Find the maximum total cookies obtained by one child
+            int large = *max_element(buckets.begin(), buckets.end());
+            unfairness = min(unfairness, large);
+            return ;
         }
         
-        //Now we check our answer with already achieved answer in order to find a better answer
-        ans=Math.min(ans,max);
-        return;
+        // Adding cookie to the buckets
+        // As there will be k buckets, we will add current cookie to each bucket 
+        for(int i=0; i<k; i++){
+            // cout<<"Adding cookie "<<ind<<" to "<<i<<"th bucket"<<endl;
+            buckets[i] += cookies[ind];
+            helper(ind+1, k, buckets, cookies);
+            buckets[i] -= cookies[ind];
+        }
     }
-
-    for(int i=0;i<k;i++)
-    {
-        //at this particular index "idx" we have an option to give this cookies of bag
-        // to the child from 0 to k-1
-        // One by one we are giving and checking in which case we get minimum unfairness
-
-        res[i]+=cookies[idx];
-        
-        //Now call the function again for the another bag of cookies and distribute it
-        backTracking(cookies,k,res,idx+1);
-        
-        // Since it is a backtracking
-        // Currently we are at index "idx" in cookies of bag and this bag we have already 
-        // distributed to the child which is at position "i" and we got our minimum answer
-        // and we are looking if we distribute this bag to another child then whether we 
-        // can achieve a better answer or not i.e. minimum possible unfairness
-        res[i]-=cookies[idx];
+    
+    int distributeCookies(vector<int>& cookies, int k) {
+		// No.of students and cookie bags are same
+        if(k == cookies.size()){
+            return *max_element(cookies.begin(), cookies.end());
+        }
+        // Divide the array into k parts and find the min largest value
+        vector<int> buckets(k, 0);
+        helper(0, k, buckets, cookies);
+        return unfairness;
     }
-}
-}
+};
