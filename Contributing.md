@@ -7,6 +7,7 @@ Thank you for helping out and remember, **no contribution is too small**. <br>
 - Code should be written in **C++**. 
 - Use curly braces from the **next line**.
 - Explain the code with proper **approach** along with its **Time and Space complexity**.
+-  Write the file name properly. **Ex : Longest_common_subsequence**.
 
 ✔ **MAIN README**
 - Write the Contest name in the first column.
