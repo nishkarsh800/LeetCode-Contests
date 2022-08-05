@@ -39,14 +39,16 @@ Constraints:
 
 // Here is solutions:
 
-class Solution {
+class Solution
+ {
 public:
     
     int unfairness = INT_MAX;
         
     void helper(int ind, int k, vector<int> &buckets, vector<int> &cookies){
         // Out of bounds
-        if(ind >= cookies.size()){
+        if(ind >= cookies.size())
+        {
             // Find the maximum total cookies obtained by one child
             int large = *max_element(buckets.begin(), buckets.end());
             unfairness = min(unfairness, large);
@@ -55,7 +57,8 @@ public:
         
         // Adding cookie to the buckets
         // As there will be k buckets, we will add current cookie to each bucket 
-        for(int i=0; i<k; i++){
+        for(int i=0; i<k; i++)
+        {
             // cout<<"Adding cookie "<<ind<<" to "<<i<<"th bucket"<<endl;
             buckets[i] += cookies[ind];
             helper(ind+1, k, buckets, cookies);
@@ -63,9 +66,11 @@ public:
         }
     }
     
-    int distributeCookies(vector<int>& cookies, int k) {
+    int distributeCookies(vector<int>& cookies, int k)
+    {
 		// No.of students and cookie bags are same
-        if(k == cookies.size()){
+        if(k == cookies.size())
+        {
             return *max_element(cookies.begin(), cookies.end());
         }
         // Divide the array into k parts and find the min largest value
