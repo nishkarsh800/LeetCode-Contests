@@ -38,8 +38,10 @@ public:
     bool val(vector<int> &v, int mark, long long k) 
     {
         long long cnt = 0;
-        for (auto a : v) {
-            if (a > mark) {
+        for (auto a : v) 
+        {
+            if (a > mark) 
+            {
                 cnt += a - mark;
             }
         }
