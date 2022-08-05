@@ -22,6 +22,7 @@ Closes #
 - [] My code follows the code style of this project.
 - [] The title of my pull request is a short description of the requested changes.
 - [] I'm HSOC'22 Contributor
+- [] I have Starred this repo.
 
 
 ## 📄 Note to reviewers
