@@ -14,7 +14,7 @@
 |-------|-----|
 | [Biweekly 83](https://leetcode.com/contest/biweekly-contest-83/) | [Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Biweekly%20Contest%2083)|
 | [Biweekly 80](https://leetcode.com/contest/biweekly-contest-80/) | [Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Biweekly%20Contest%2080) |
-
+| [Biweekly 81](https://leetcode.com/contest/biweekly-contest-81/)|[Solutions](https://github.com/Avik-creator/LeetCode-Contests/tree/Biweekly81/Biweekly%2081)|
 </div>
 
 <br> <br> 
