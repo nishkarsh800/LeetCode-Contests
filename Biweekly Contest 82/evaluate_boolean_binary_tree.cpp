@@ -43,7 +43,8 @@ public:
 
         function<int (TreeNode*)> dfs = [&](TreeNode *node) 
         {
-            if (node->left == node->right) {
+            if (node->left == node->right) 
+            {
                 return node->val;
             }
             return OP[node->val](dfs(node->left), dfs(node->right));
