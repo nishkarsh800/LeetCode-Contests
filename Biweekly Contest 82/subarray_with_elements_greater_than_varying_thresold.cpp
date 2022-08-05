@@ -28,14 +28,19 @@ Approach:
 We build a monotone stack starting from each element, assume the current element is the smallest element in the subarray, and check if any possible subarray fulfills the threshold requirement.
 */
 
-class Solution {
+class Solution 
+{
 public:
-    int validSubarraySize(vector<int>& nums, int threshold) {
+    int validSubarraySize(vector<int>& nums, int threshold) 
+    {
         vector<int> stk = {-1};
-        for (int i = 0; i <= size(nums); ++i) {
-            while (stk.back() != -1 && (i == size(nums) || nums[stk.back()] >= nums[i])) {
+        for (int i = 0; i <= size(nums); ++i) 
+        {
+            while (stk.back() != -1 && (i == size(nums) || nums[stk.back()] >= nums[i])) 
+            {
                 int j = stk.back(); stk.pop_back();
-                if (nums[j] * ((i - 1) - stk.back()) > threshold) {
+                if (nums[j] * ((i - 1) - stk.back()) > threshold) 
+                {
                     return (i - 1) - stk.back();
                 }
             }
