@@ -53,7 +53,8 @@ public:
             while (que < passengers.size() && curPas < capacity && passengers[que] <= curDepar) 
             {
                 ++que;
-                if (st.find(passengers[que - 1] - 1) == st.end()) {
+                if (st.find(passengers[que - 1] - 1) == st.end()) 
+                {
                     ans = passengers[que - 1] - 1;
                 }
                 ++curPas;
