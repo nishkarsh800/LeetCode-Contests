@@ -16,7 +16,7 @@ Thank you for helping out and remember, **no contribution is too small**. <br>
 
 ✔ **FOLDER README**
 - Inside the folder, edit readme by having links to the problem asked.
-- If any problem is Important in perspective of an interview, mark it as 💡
+- If any problem is Important in perspective of an interview, mark it as 💡.
 
 👻 **Now, Follow these steps :-**
 ### Step 1 : Create an issue
