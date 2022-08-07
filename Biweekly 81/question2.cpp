@@ -68,7 +68,8 @@ public:
         rank = new int[n];
         fill(rank, rank + n, 1);
     }
-    int find(int node) {
+    int find(int node) 
+    {
         if (parent[node] != node) {
             parent[node] = find(parent[node]);
         }
@@ -84,7 +85,8 @@ public:
             parent[py] = px;
             rank[px] += rank[py];
         }
-        else {
+        else 
+        {
             parent[px] = py;
             rank[py] += rank[px];
         }
