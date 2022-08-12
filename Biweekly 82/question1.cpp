@@ -58,12 +58,15 @@ Non-leaf nodes have a value of 2 or 3.
 
 // Here is the Solution:
 
-class Solution {
+class Solution 
+{
 public:
     
-    bool evaluateTree(TreeNode* root) {
+    bool evaluateTree(TreeNode* root) 
+    {
 		// return true or false if there is no further node.(recursion base)
-        if(not root){
+        if(not root)
+	{
             return true;
         }
         
@@ -73,9 +76,11 @@ public:
         
 		// do the logical || or && based on the root value.
 		// if it isn't either 2 or 3, return the value itself.
-        if(root->val == 2){
+        if(root->val == 2)
+	{
             return lval or rval;
-        } else if(root->val == 3) {
+        } else if(root->val == 3) 
+	{
             return lval and rval;
         } else return root->val;
     }
