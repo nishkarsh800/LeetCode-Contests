@@ -76,7 +76,8 @@ public:
         unordered_map<long long, int> mp;
         
         //traversing to get count
-        for(int i= 0; i< n; ++i){
+        for(int i= 0; i< n; ++i)
+        {
             long long x= (long long)abs(nums1[i] - nums2[i]);
             
             //storing unique values into set
