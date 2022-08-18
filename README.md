@@ -30,7 +30,7 @@
 |-------|-----|
 |[Weekly Contest 298](https://leetcode.com/contest/weekly-contest-298/)|[Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Weekly%20Contest%20298)|
 |[Weeky Contest 297](https://leetcode.com/contest/weekly-contest-297/)|[Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Weekly%20Contest%20297)|
-|[Weekly Contest 304](https://leetcode.com/contest/weekly-contest-304/)|[Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Weekly%20Contest%20304)
+|[Weekly Contest 304](https://leetcode.com/contest/weekly-contest-304/)|[Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Weekly%20Contest%20304)|
 </div>
 <br>
 <br>
