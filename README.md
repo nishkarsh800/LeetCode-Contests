@@ -1,4 +1,4 @@
-# LEETCODE CONTESTS
+# Leetcode Contests
 
 🥇  [CONTRIBUTING GUIDELINES](https://github.com/nishkarsh800/LeetCode-Contests/blob/main/Contributing.md) 🥇
 
