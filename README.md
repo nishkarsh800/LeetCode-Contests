@@ -1,5 +1,9 @@
-# LEETCODE CONTESTS
-🥇  [CONTRIBUTING GUIDELINES](https://github.com/nishkarsh800/LeetCode-Contests/blob/main/Contributing.md) 🥇
+<div align="center">
+<img width="600" src="https://user-images.githubusercontent.com/94545831/207808991-379b11d9-b2c2-46c9-8e6c-bc36565bbe66.png"/></div>
+
+<br>
+
+Check [CONTRIBUTING GUIDELINES](https://github.com/nishkarsh800/LeetCode-Contests/blob/main/Contributing.md) 
 
 <br>
 
@@ -31,7 +35,8 @@
 |[Weeky Contest 297](https://leetcode.com/contest/weekly-contest-297/)|[Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Weekly%20Contest%20297)|
 |[Weekly Contest 304](https://leetcode.com/contest/weekly-contest-304/)|[Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Weekly%20Contest%20304)|
 |[Weekly Contest 305](https://leetcode.com/contest/weekly-contest-305/)|[Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Weekly%20Contest%20305)|
-|[Weekly Contest 308](https://leetcode.com/contest/weekly-contest-308/)|[Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Weekly%20Contest%20308)
+|[Weekly Contest 308](https://leetcode.com/contest/weekly-contest-308/)|[Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Weekly%20Contest%20308)|
+|[Weekly Contest 321](https://leetcode.com/contest/weekly-contest-321/)|[Solutions](https://github.com/nishkarsh800/LeetCode-Contests/tree/main/Weekly%20Contest%20321)|
 </div>
 <br>
 <br>
